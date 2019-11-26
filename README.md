@@ -11,3 +11,24 @@ The concert-this function takes in the name of a band or artist and returns info
 The app then queries the Bands in Town API with the search term and returns the results:
 
 ![concert-this code](concert-this.png)
+
+
+**spotify-this-song**
+
+`node liri.js spotify-this-song name`
+
+![spotify-this-song code](spotify-this-song.png)
+
+
+**movie-this**
+
+`node liri.js movie-this movie name`
+
+![movie-this code](movie-this.png)
+
+
+**do-what-it-says**
+
+`node liri.js do-what-it-says`
+
+![do-what-it-says code](do-what-it-says.png)
