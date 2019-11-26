@@ -35,16 +35,16 @@ function concertThis() {
 //--------------spotify-this-song function---------------------------------------
 
 function spotifyThisSong() {
-    var song = "The Sign Ace of Base";
+    let song = "The Sign Ace of Base";
     if (searchTerm) {
-        var song = searchTerm;
-    };
+        song = searchTerm;
+    }
     spotify.request('https://api.spotify.com/v1/search?q=track:' + song + '&type=track&limit=10', function (error, response) {
         for (i = 0; i < 3; i++) {
             if (error) {
                 return console.log(error);
             }
-            console.log("Artist: " + response.tracks.items[i].artists[i].name + "\nSong: " + response.tracks.items[i].name + "\nPreview: " + response.tracks.items[i].preview_url + "\nAlbum: " + response.tracks.items[i].album.name);
+            console.log("\nArtist: " + response.tracks.items[i].artists[0].name + "\nSong: " + response.tracks.items[i].name + "\nPreview: " + response.tracks.items[i].preview_url + "\nAlbum: " + response.tracks.items[i].album.name);
         };
     });
 };
@@ -76,13 +76,13 @@ function movieThis() {
 
 function doWhatItSays() {
     fs.readFile("./random.txt", "utf8", function (error, data) {
-        let dataArray = data.split(",")
-        let action = dataArray[0];
-        let searchTerm = dataArray[1];
-        console.log(action + searchTerm)
+        var dataArray = data.split(",")
+        action = dataArray[0];
+        searchTerm = dataArray[1].slice(1, -1);
         if (action === "concert-this") {
             concertThis();
         } else if (action === "spotify-this-song") {
+            console.log(searchTerm)
             spotifyThisSong();
         } else if (action === "movie-this") {
             movieThis();
