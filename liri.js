@@ -22,7 +22,7 @@ function concertThis() {
         for (i = 0; i < 3; i++) {
             let data = response.data
             let date = moment(data[i].datetime).format("MM-DD-YYYY")
-            console.log("Venue: " + data[i].venue.name + "\nLocation: " + data[i].venue.city + ", " + data[i].venue.region + "\nDate: " + date);
+            console.log("\nVenue: " + data[i].venue.name + "\nLocation: " + data[i].venue.city + ", " + data[i].venue.region + "\nDate: " + date);
         };
     }).catch(error => {
         console.log(error);
