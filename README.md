@@ -37,7 +37,11 @@ The app then queries the OMDB API with the search term and returns the results:
 
 **do-what-it-says**
 
-The do-what-it-says function uses the fs node module to query the type of search and the search term from a seperate .txt file. In the command line, the user types:  
+The do-what-it-says function uses the fs node module to query the type of search and the search term from a seperate .txt file like this one: 
+
+![text-file code](text-file.png)
+
+In the command line, the user types:  
 
 `node liri.js do-what-it-says`
 
